@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <!--android:background="@android:color/background_light"-->
+    <!--<FrameLayout-->
+    <!--android:id="@+id/booklist_item_pic"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content">-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/booklist_item_pic"-->
+    <!--android:layout_width="50dp"-->
+    <!--android:layout_height="70dp"-->
+    <!--android:layout_gravity="center_vertical"-->
+    <!--android:src="@drawable/book" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/booklist_item_pic_progress"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="end"-->
+    <!--android:background="#7CFC00"-->
+    <!--android:text=" 78%"-->
+    <!--android:textSize="9dp" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/booklist_item_pic_name"-->
+    <!--android:layout_width="50dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:gravity="center"-->
+    <!--android:text="福尔摩斯探案集"-->
+    <!--android:textColor="#FAEBD7"-->
+    <!--android:textSize="6dp" />-->
+
+    <!--</FrameLayout>-->
+
+    <ImageView
+        android:id="@+id/booklist_item_pic"
+        android:layout_width="50dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center_vertical"
+        android:scaleType="fitCenter"
+        android:src="@mipmap/book" />
+
+    <TextView
+        android:id="@+id/booklist_item_pic_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/booklist_item_pic"
+        android:background="#7CFC00"
+        android:text=" 78%"
+        android:textSize="9dp" />
+
+    <TextView
+        android:id="@+id/booklist_item_pic_name"
+        android:layout_width="44dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/booklist_item_pic_progress"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="5dp"
+        android:text="福尔摩斯探案集"
+        android:textColor="#FAEBD7"
+        android:textSize="6dp" />
+
+    <TextView
+        android:id="@+id/booklist_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@id/booklist_item_pic"
+        android:paddingLeft="10dp"
+        android:text="福尔摩斯"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/booklist_item_athor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/booklist_item_name"
+        android:layout_toRightOf="@id/booklist_item_pic"
+        android:paddingLeft="25dp"
+        android:text="---柯南道尔"
+        android:textSize="10dp" />
+
+    <TextView
+        android:id="@+id/booklist_item_finish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/booklist_item_athor"
+        android:layout_toRightOf="@id/booklist_item_pic"
+        android:paddingLeft="15dp"
+        android:paddingTop="5dp"
+        android:text="已读：128"
+        android:textSize="10dp" />
+
+    <TextView
+        android:id="@+id/booklist_item_total"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/booklist_item_athor"
+        android:layout_toRightOf="@id/booklist_item_finish"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:text=" 总页数：365"
+        android:textSize="10dp" />
+
+    <ProgressBar
+        android:id="@+id/booklist_item_progressbar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/booklist_item_pic"
+        android:layout_below="@id/booklist_item_total"
+        android:layout_toRightOf="@id/booklist_item_pic"
+        android:clickable="true"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:progress="75" />
+
+    <TextView
+        android:id="@+id/booklist_item_read_days"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_above="@id/booklist_item_progressbar"
+        android:layout_alignEnd="@id/booklist_item_progressbar"
+        android:layout_alignRight="@id/booklist_item_progressbar"
+        android:background="@color/gray"
+        android:gravity="center"
+        android:text="28天"
+        android:textColor="#A8231E"
+        android:textSize="20dp" />
+
+</RelativeLayout>

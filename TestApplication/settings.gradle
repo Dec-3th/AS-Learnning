@@ -1,0 +1,1 @@
+include ':actionbarapp', ':fragmentsapp', ':savedataapp', ':intentuseapp', ':ListviewApp', ':flashlight', ':WandoujiaSDK_1.6.6', ':adtestapp', ':GreedySnake', ':androidbasics', ':gpsfaker'

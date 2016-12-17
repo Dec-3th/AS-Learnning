@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">FragmentApplication</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_article_fragment">Hello Article fragment!</string>
+    <string name="saved_high_score">saved_high_score</string>
+    <string name="high_score_recodes">high_score_recodes</string>
+    <integer name="saved_high_score_default">520</integer>
+
+</resources>

@@ -1,0 +1,22 @@
+<!-- 为了从一个布局替换为另外一个布局，activity的布局包含了一个空的 FrameLayout作为fragment的容器。 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="替换Fragment"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:onClick="shiftFragment"/>-->
+
+    <!-- 这里为一个空的 FrameLayout作为 fragment的容器，用于放不同fragment的layout以切换fragment -->
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+       />
+    
+</LinearLayout>

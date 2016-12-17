@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jirdy.adtestapp">
+
+    <!-- AD所需 用户权限 start-->
+    <!-- 连接网络权限INTERNET ，用于请求广告(必须)， mogo会使用该权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- add读取手机基本信息权限READ_PHONE_STATE，用于精确统计用户的机型等信息(必须)，mogo
+    会使用该权限 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 读取网络信息权限ACCESS_NETWORK_STATE，用于识别gprs网络的接入点的情况(必须)，
+    mogo会使用该权限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- add获取用户地理信息权限，用于帮助精确统计开发者的程序发布之后的用户分布情况 ，mogo会
+    使用该权限-->
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <!-- 读写sd 卡的权限，用于缓存广告所用到的图片，节省流量，并可获得更好的用户体验 ，mogo
+    会使用该权限-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!--获得当前wifi的状态，微云广告平台需要此权限，mogo会使用该权限-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!--按效果付费功能需要的权限,mogo会使用该权限 -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <!-- AD所需 用户权限 end-->
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:name="android.support.multidex.MultiDexApplication">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--  声明Mogo的Activity  -->   
+        <activity
+            android:name="com.adsmogo.adview.AdsMogoWebView"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name" />
+        <!--  注册Service，自主广告与交换广告的应用下载功能所需  -->
+        <service
+            android:name="com.adsmogo.controller.service.UpdateService"
+            android:exported="true"
+            android:process=":remote" />
+        <!--  注册Service，安装应用所用  -->
+        <service
+            android:name="com.adsmogo.controller.service.CountService"
+            android:exported="true"
+            android:process=":remote" />
+
+        <!-- 腾讯广点通 开始-->
+        <service
+            android:name="com.qq.e.comm.DownloadService"
+            android:exported="false"></service>
+
+        <activity
+            android:name="com.qq.e.ads.ADActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation"
+            android:theme="@android:style/Theme.Translucent"></activity>
+        <!-- 广点通 结束-->
+
+        <!-- 添加百度应用详情Activity 注册AppActivity-->
+        <activity
+            android:name="com.baidu.mobads.AppActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <!--关于豌豆荚的Activity，在WanDouJia工程中已经声明，在此不用重复声明-->
+
+        <!-- inmobi 开始 -->
+        <!-- Mandatory activity declaration to show the Ad in the embedded browser -->
+        <activity
+            android:name="com.inmobi.rendering.InMobiAdActivity"
+            android:configChanges="keyboardHidden|orientation|keyboard|smallestScreenSize|screenSize"
+            android:hardwareAccelerated="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!-- GoogleService -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <receiver
+            android:name="com.inmobi.commons.core.utilities.uid.ImIdShareBroadCastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.inmobi.share.id" />
+            </intent-filter>
+        </receiver>
+        <!-- inmobi 结束 -->
+    </application>
+
+</manifest>

@@ -1,0 +1,48 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#DCDCDC">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.tnyoo.fragmentsapp.ArticleFragment">
+
+        <!-- TODO: Update blank fragment layout -->
+        <TextView
+            android:id="@+id/article"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/hello_article_fragment"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/highScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/article"
+            android:text="最高分：300"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/highScore"
+            android:layout_alignParentLeft="true"
+            android:onClick="writeSharedPreference"
+            android:text="保存最高分" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/highScore"
+            android:layout_alignParentRight="true"
+            android:onClick="readSharedPreference"
+            android:text="读取最高分" />
+
+    </RelativeLayout>
+
+</ScrollView>

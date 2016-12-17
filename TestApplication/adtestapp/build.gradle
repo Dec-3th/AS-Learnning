@@ -1,0 +1,51 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "21.1.2"
+
+    defaultConfig {
+        applicationId "com.jirdy.adtestapp"
+        minSdkVersion 9
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            minifyEnabled true
+            debuggable false
+            jniDebuggable false
+            versionNameSuffix '1.0'
+        }
+    }
+}
+
+//添加一个本地仓库，并把libs目录作为仓库的地址。
+repositories {
+
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile files('libs/AdsMOGO_Android_SDK_1.6.5.jar')
+    compile project(':WandoujiaSDK_1.6.6')
+    compile files('libs/Baidu_MobAds_SDK_v4.6.jar')
+    compile files('libs/GDTUnionSDK.4.8.521.min.jar')
+    /**
+     * 引用 support v4
+     * 21.0.3这个版本可以根据你电脑sdk的配置略作修改
+     */
+    compile 'com.android.support:support-v4:21.0.3'
+//    compile 'com.android.support:appcompat-v7:21.0.3'
+    compile files('libs/InMobi-5.2.1.jar')
+    compile 'com.google.android.gms:play-services:8.1.0'
+
+    compile 'com.android.support:multidex:1.0.0'
+}

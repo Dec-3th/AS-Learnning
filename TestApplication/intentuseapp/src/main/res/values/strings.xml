@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">IntentUseApp</string>
+    <string name="location">0,0?q=1600+Amphitheatre+Parkway,+Mountain+View,+California</string>
+    <string name="chooser_title">Share with friends</string>
+
+    <string name="call">拨打电话</string>
+    <string name="open_map">查看地图</string>
+    <string name="open_web_page">查看网页</string>
+    <string name="send_email">发送带附件的email</string>
+    <string name="create_calendar_event">创建日历事件</string>
+    <string name="chose_share_app">显示分享App的选择界面</string>
+    <string name="start_activity_for_result">start activity for result</string>
+    <string name="show_all_contacts">读取所有联系人信息</string>
+
+</resources>

@@ -1,0 +1,29 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <item
+        android:id="@+id/action_location"
+        android:orderInCategory="1"
+        android:title=""
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_input"
+        android:orderInCategory="100"
+        android:title="输入坐标"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_my"
+        android:orderInCategory="100"
+        android:title="我的位置"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_about"
+        android:orderInCategory="100"
+        android:title="关于"
+        app:showAsAction="never"/>
+
+</menu>

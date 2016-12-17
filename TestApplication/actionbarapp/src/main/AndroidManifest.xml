@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tnyoo.actionbarapp" >
+
+    <user-sdk android:minSdkVersion="17" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light" > <!-- Light的主题，会运用于所有不设置theme属性的Activity -->
+        <activity
+            android:name="com.tnyoo.actionbarapp.ActionBarMainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tnyoo.actionbarapp.UpHomeActivity"
+            android:label="@string/title_activity_display"
+            android:theme="@style/Theme.AppCompat" > <!-- Dark的主题，应用于该Activity -->
+
+            <!-- android:parentActivityName=".ActionBarMainActivity" parentActivityName属性用来，设置该Activity的父Activity（4.0以下使用meta-data来设置） -->
+            <!-- 首先，设置该Activity的父Activity, meta-data 用于支持 support 4.0 以及以下来指明上级Activity -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.tnyoo.actionbarapp.ActionBarMainActivity" />
+        </activity>
+        <activity
+            android:name="com.tnyoo.actionbarapp.ThemeActivity"
+            android:label="@string/title_activity_custom_theme"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" > <!-- 一个带有Dark Action Bar的Light主题 -->
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.tnyoo.actionbarapp.ActionBarMainActivity" />
+        </activity>
+        <activity android:name="com.tnyoo.actionbarapp.CustomActionBarActivity"
+            android:label="@string/title_activity_custom_bg"
+            android:theme="@style/CustomActionBarTheme" > <!-- 使用自定义ActionBar背景的主题作为Activity的主题 -->
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.tnyoo.actionbarapp.ActionBarMainActivity" />
+        </activity>
+    </application>
+
+</manifest>

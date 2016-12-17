@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MAIN 遇见更好的自己</string>
+    <string name="action_settings">设置</string>
+    <string name="open_activity">启动一个Activity</string>
+    <string name="check_update">检查更新</string>
+    <string name="contact_us">联系我们</string>
+    <string name="search">搜索</string>
+    <string name="title_activity_display">1 向上导航</string>
+    <string name="title_activity_custom_theme">2 自定义主题</string>
+    <string name="title_activity_custom_bg">3 自定义背景</string>
+</resources>

@@ -1,0 +1,72 @@
+<resources>
+
+    <!--为启动的Activity自定义一个Theme -->
+    <style name="AppTheme.Launcher">
+        <item name="android:windowBackground">@color/colorbgstart</item>
+    </style>
+
+    <!-- Base application theme. .Light.DarkActionBar-->
+    <style name="AppTheme" parent="Theme.AppCompat">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorSecondary">@color/secondary_text_material_light</item>
+
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+
+    <style name="style_RadioButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:button">@null</item>
+        <item name="android:background">@null</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">@drawable/rb_focus_color</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <!-- 自定义主题，应用于程序或者活动的主题 -->
+    <style name="AppTheme.CustomActionBar"
+        parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">@color/secondary_text_material_light</item>
+        <item name="android:actionBarStyle">@style/MyActionBar</item><!-- 使用下面自定义的ActionBar -->
+
+        <!-- 支持库兼容 （使用 Support 库时）-->
+        <item name="actionBarStyle">@style/MyActionBar</item>
+    </style>
+
+    <!-- 自定义 ActionBar 样式 -->
+    <style name="MyActionBar"
+        parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <!--<item name="android:actionBarSize">30dp</item>-->
+        <item name="android:background">@mipmap/custom_actionbar_bg</item>
+        <!-- 支持库兼容 （使用 Support 库时）-->
+        <item name="background">@mipmap/custom_actionbar_bg</item>
+    </style>
+
+    <!-- 按钮点击效果 -->
+    <style name="ButtonGreen" parent="@android:style/Widget.Button">
+        <item name="android:textSize">15.0sp</item>
+        <item name="android:textColor">@drawable/skin_color_button</item>
+        <item name="android:background">@drawable/detail_change_btn_bg</item>
+    </style>
+
+    <!-- 按钮点击效果 -->
+    <style name="ButtonConfirm" parent="@android:style/Widget.Button">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:background">@drawable/comfirm_btn_bg</item>
+    </style>
+</resources>

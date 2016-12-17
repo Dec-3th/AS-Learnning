@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jirdy.listview">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!--android:screenOrientation="portrait"-->
+
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.Launcher">
+
+            <!-- 自定义ActionBar主题CustomActionBarTheme    AppTheme.CustomActionBar-->
+            <!-- android:theme="@style/Theme.AppCompat.Light.DarkActionBar" -->
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Activitys.BookDetailActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/book_detail_activity_title"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.CustomActionBar">
+
+            <!-- meta-data 用于支持 support 4.0 以及以下来指明上级活动 -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+        <activity
+            android:name=".Activitys.ReadCardActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/book_readCard_activity_title"
+            android:theme="@style/AppTheme.CustomActionBar"/>
+
+        <activity
+            android:name=".Activitys.AddBookActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/add_book_activity_title"
+            android:theme="@style/AppTheme.CustomActionBar"></activity>
+    </application>
+
+</manifest>

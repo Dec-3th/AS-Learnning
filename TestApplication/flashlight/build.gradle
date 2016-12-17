@@ -1,0 +1,63 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion '21.1.2'
+
+    defaultConfig {
+        applicationId "com.jirdy.flashlight"
+        minSdkVersion 9
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            minifyEnabled true
+            debuggable false
+            jniDebuggable false
+            versionNameSuffix '1.0'
+        }
+    }
+}
+
+//添加一个本地仓库，并把libs目录作为仓库的地址。
+repositories {
+
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:21.0.3'
+    compile files('libs/AdsMOGO_Android_SDK_1.6.5.jar')
+    //芒果//使用本地jar
+    compile files('libs/Baidu_MobAds_SDK_v4.6.jar')
+    //百度
+    compile files('libs/GDTUnionSDK.4.8.521.min.jar')
+    //腾讯广点通
+    /**
+     * 引用 support v4
+     * 21.0.3这个版本可以根据你电脑sdk的配置略作修改
+     */
+    compile 'com.android.support:support-v4:21.0.3'
+//    compile 'com.google.android.gms:play-services:8.1.0'
+    //    /**
+    //     * 引用WandoujiaSDK.aar
+    //     */
+    //    compile(name: 'WandoujiaSDK_1.6.6', ext: 'aar')//豌豆荚 使用本地aar
+    /**
+     * 下面是wandoujia sdk的依赖包
+     */
+    //    compile 'com.google.code.gson:gson:2.3.1'
+    //    compile 'com.squareup.okhttp:okhttp:2.2.0'
+    //    compile 'com.squareup.okhttp:okhttp-urlconnection:2.2.0'
+    //    compile 'com.squareup:otto:1.3.6'
+    //    compile 'com.squareup.picasso:picasso:2.4.0'
+    compile project(':WandoujiaSDK_1.6.6')
+//    compile files('libs/InMobi-5.2.1.jar')
+}

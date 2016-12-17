@@ -1,0 +1,45 @@
+<resources>
+
+    <string name="app_name">高级列表视图</string>
+
+    <!-- TODO: actionBar 标题 -->
+    <string name="action_settings">Settings</string>
+    <string name="action_add">添加读书</string>
+    <string name="action_reminder">提醒</string>
+    <string name="action_delete">删除所有图书</string>
+
+    <!-- TODO: activity 标题 -->
+    <string name="add_book_activity_title">添加读书</string>
+    <string name="book_detail_activity_title">读书详情</string>
+    <string name="book_readCard_activity_title">读书打卡</string>
+    <string name="book_remind_activity_title">读书提醒</string>
+
+    <!-- TODO: 读书详情Activity 添加图书Activity 公用参数 begin-->
+    <string name="book_text_name">书名：</string>
+    <string name="book_text_author">作者：</string>
+    <string name="book_text_type">类型：</string>
+
+    <string name="book_text_total">总页数：</string>
+    <string name="book_text_finish">已读页数：</string>
+
+    <string name="book_hint_name">书名(必填)</string>
+    <string name="book_hint_author">作者</string>
+    <string name="book_hint_total">总页数(必填)</string>
+    <string name="book_hint_finish">已读页数(必填)</string>
+    <!-- 读书详情界面 添加图书 界面公用参数 begin-->
+
+    <!-- TODO: 读书详情界面单独参数 begin-->
+    <string name="book_detail_text_createtime">创建时间：</string>
+    <string name="book_detail_text_finishtime">完成时间：</string>
+    <string name="book_detail_text_readdays">已读天数：</string>
+    <string name="book_detail_text_readstate">状态：</string>
+    <!-- 读书详情界面参数 end-->
+
+    <string name="rb_title_booklist">我的书单</string>
+    <string name="rb_title_graph">图表</string>
+    <string name="rb_title_discovery">发现好书</string>
+    <string name="rb_title_userinfo">个人信息</string>
+
+    <!-- TODO: Fragment参数 -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

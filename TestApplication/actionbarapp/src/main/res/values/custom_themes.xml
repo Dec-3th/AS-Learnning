@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 应用于程序或者活动的主题 -->
+    <style name="CustomActionBarTheme"
+        parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/MyActionBar</item><!-- 使用下面自定义的ActionBar -->
+
+        <!-- 支持库兼容 （使用 Support 库时） -->
+        <item name="actionBarStyle">@style/MyActionBar</item>
+    </style>
+
+    <!-- ActionBar 样式 -->
+    <style name="MyActionBar"
+        parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@drawable/custom_actionbar_bg</item>
+
+        <!-- 支持库兼容 （使用 Support 库时）-->
+        <item name="background">@drawable/custom_actionbar_bg</item>
+    </style>
+</resources>

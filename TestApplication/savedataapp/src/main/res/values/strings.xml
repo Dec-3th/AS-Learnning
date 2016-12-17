@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">SaveDataApp</string>
+    <string name="saved_data">最后的晚餐</string>
+
+    <!-- 保存到SharedPreference相关string -->
+    <string name="main_save_to_preference">保存到SharedPreference</string>
+    <string name="high_score">high_score</string>
+    <string name="high_score_file">high_score_file</string>
+    <string name="high_score_default">520</string>
+
+    <!-- 保存到文件 及 文件操作相关string -->
+    <string name="main_save_to_file">保存到文件</string>
+    <string name="save_to_cache">保存数据到缓存</string>
+    <string name="save_to_internal_storage">保存数据到内部存储</string>
+    <string name="external_storage_private_save">私有文件保存到外部存储</string>
+    <string name="external_storage_public_save">共享文件保存到外部存储</string>
+    <string name="query_space">查询剩余空间</string>
+    <string name="delete_file">删除文件</string>
+
+    <!-- 保存到Database相关string -->
+    <string name="main_save_to_database">保存到Database</string>
+    <string name="add">添加信息到DB</string>
+    <string name="query">从DB中读取信息</string>
+    <string name="update">更新DB数据</string>
+    <string name="delete">删除DB中的信息</string>
+
+</resources>

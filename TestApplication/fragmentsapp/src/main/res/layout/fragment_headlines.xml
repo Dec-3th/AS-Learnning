@@ -1,0 +1,17 @@
+<!-- 这个布局只用于large模式下的activity_main.xml布局中，
+正常模式下直接使用ListView的布局填满Fragment，不用这个布局 -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E3D3D5"
+    tools:context=".HeadlinesFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello Headlines Fragment!" />
+
+</RelativeLayout>
+
+

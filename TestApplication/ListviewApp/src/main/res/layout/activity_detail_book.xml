@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".Activitys.BookDetailActivity">
+
+
+    <Button
+        android:id="@+id/detail_button_delete"
+        style="@style/ButtonGreen"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:onClick="bookDetailOnClick"
+        android:shadowColor="#9E9E9E"
+        android:shadowDx="1"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:text="删除" />
+
+    <!-- 可以使用参数：android:enabled="false"来控制编辑框是否可编辑 -->
+    <Button
+        android:id="@+id/detail_button_modify"
+        style="@style/ButtonGreen"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:layout_toLeftOf="@id/detail_button_delete"
+        android:onClick="bookDetailOnClick"
+        android:shadowColor="#9E9E9E"
+        android:shadowDx="1"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:text="修改" />
+
+
+    <Button
+        android:id="@+id/detail_button_readcard"
+        style="@style/ButtonGreen"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:layout_toLeftOf="@id/detail_button_modify"
+        android:onClick="bookDetailOnClick"
+        android:shadowColor="#9E9E9E"
+        android:shadowDx="1"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:text="打卡" />
+
+    <ImageView
+        android:id="@+id/detail_book_pic"
+        android:layout_width="75dp"
+        android:layout_height="105dp"
+        android:layout_below="@id/detail_button_delete"
+        android:layout_gravity="center_vertical"
+        android:scaleType="fitCenter"
+        android:src="@mipmap/book" />
+
+    <TextView
+        android:id="@+id/booklist_item_pic_name"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/detail_book_pic"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="20dp"
+        android:text="福尔摩斯探案集"
+        android:textColor="#FAEBD7"
+        android:textSize="8sp" />
+
+    <TextView
+        android:id="@+id/detail_text_readstate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/detail_book_pic"
+        android:layout_toRightOf="@id/detail_book_pic"
+        android:paddingLeft="10dp"
+        android:paddingTop="35dp"
+        android:text="@string/book_detail_text_readstate"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/detail_text_createtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detail_text_readstate"
+        android:layout_toRightOf="@id/detail_book_pic"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:text="@string/book_detail_text_createtime"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/detail_text_finishtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detail_text_createtime"
+        android:layout_toRightOf="@id/detail_book_pic"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:text="@string/book_detail_text_finishtime"
+        android:textSize="15sp" />
+
+    <LinearLayout
+        android:id="@+id/detail_linear_bookName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detail_book_pic"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/book_text_name"
+            android:textSize="20sp" />
+
+        <!-- 可以使用参数：android:enabled="false"来控制编辑框是否可编辑 -->
+        <EditText
+            android:id="@+id/detail_edit_bookName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:hint="@string/book_hint_name"
+            android:text="福尔摩斯探案"
+            android:textColor="@color/textcolor" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/detail_linear_bookAuthor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detail_linear_bookName"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/book_text_author"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/detail_edit_bookAuthor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:hint="@string/book_hint_author"
+            android:text="柯南道尔"
+            android:textColor="@color/textcolor" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/detail_linear_bookType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detail_linear_bookAuthor"
+        android:clickable="false"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/book_text_type"
+            android:textSize="20sp" />
+
+        <!--<TimePicker-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"></TimePicker>-->
+
+        <Spinner
+            android:id="@+id/detail_spinner_bookType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:enabled="false"
+            android:entries="@array/spinner_array"
+            android:textColor="@color/textcolor" />
+
+        <!--<EditText-->
+        <!--android:id="@+id/detail_edit_bookType"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:enabled="false"-->
+        <!--android:hint="@string/book_text_type"-->
+        <!--android:text="悬疑" />-->
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/detail_linear_bookFinish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detail_linear_bookType"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/book_text_finish"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/detail_edit_finishPage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:hint="@string/book_hint_finish"
+            android:text="288"
+            android:textColor="@color/textcolor" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/detail_linear_bookTotal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detail_linear_bookFinish"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/book_text_total"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/detail_edit_totalPage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:hint="@string/book_hint_total"
+            android:text="365"
+            android:textColor="@color/textcolor" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/detail_button_comfirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detail_linear_bookTotal"
+        android:layout_gravity="bottom"
+        android:gravity="right"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/detail_btn_ok"
+            style="@style/ButtonConfirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="bookDetailOnClick"
+            android:paddingRight="30dp"
+            android:text="确认" />
+
+        <Button
+            android:id="@+id/detail_btn_cancel"
+            style="@style/ButtonConfirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="bookDetailOnClick"
+            android:text="取消" />
+
+    </LinearLayout>
+</RelativeLayout>

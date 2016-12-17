@@ -1,0 +1,51 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <!--android:background="@color/colorPrimaryDark"-->
+    <ToggleButton
+        android:id="@+id/mLightBtn"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        android:background="@android:color/transparent"
+        android:button="@drawable/checkbox_iphone"
+        android:checked="false"
+        android:textOff=""
+        android:textOn="" />
+
+    <ToggleButton
+        android:id="@+id/mSosBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/mLightBtn"
+        android:layout_gravity="center"
+        android:checked="false"
+        android:textOff="求救信号关"
+        android:textOn="求救信号开" />
+
+    <!-- 显示广告的Layout  my: 82a6c4f89b244377b9d1e1f5fb9ed7c7
+    demo: 3685b5d22e2f43649a4f61afde5c9ee4 -->
+    <!--<com.adsmogo.adview.AdsMogoLayout-->
+    <!--android:id="@+id/adsMogoView"-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_marginBottom="0dp"-->
+    <!--android:background="@color/white"-->
+    <!--adsmogo:appid="82a6c4f89b244377b9d1e1f5fb9ed7c7" />-->
+
+    <LinearLayout
+        android:id="@+id/banner_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:background="@android:color/transparent"
+        android:orientation="vertical" />
+
+</RelativeLayout>

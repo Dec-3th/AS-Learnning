@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/GreedySnake/GreedySnake.iml" filepath="$PROJECT_DIR$/GreedySnake/GreedySnake.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ListviewApp/ListviewApp.iml" filepath="$PROJECT_DIR$/ListviewApp/ListviewApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestApplication.iml" filepath="$PROJECT_DIR$/TestApplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WandoujiaSDK_1.6.6/WandoujiaSDK_1.6.6.iml" filepath="$PROJECT_DIR$/WandoujiaSDK_1.6.6/WandoujiaSDK_1.6.6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/actionbarapp/actionbarapp.iml" filepath="$PROJECT_DIR$/actionbarapp/actionbarapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/adtestapp/adtestapp.iml" filepath="$PROJECT_DIR$/adtestapp/adtestapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/androidbasics/androidbasics.iml" filepath="$PROJECT_DIR$/androidbasics/androidbasics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flashlight/flashlight.iml" filepath="$PROJECT_DIR$/flashlight/flashlight.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fragmentsapp/fragmentsapp.iml" filepath="$PROJECT_DIR$/fragmentsapp/fragmentsapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gpsfaker/gpsfaker.iml" filepath="$PROJECT_DIR$/gpsfaker/gpsfaker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/intentuseapp/intentuseapp.iml" filepath="$PROJECT_DIR$/intentuseapp/intentuseapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/savedataapp/savedataapp.iml" filepath="$PROJECT_DIR$/savedataapp/savedataapp.iml" />
+    </modules>
+  </component>
+</project>

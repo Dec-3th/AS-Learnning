@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Android模拟位置，只能在debug中使用 -->
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+</manifest>

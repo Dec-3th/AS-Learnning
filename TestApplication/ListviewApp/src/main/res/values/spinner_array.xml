@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spinner_array">
+        <item>理财</item>
+        <item>悬疑</item>
+        <item>名著</item>
+        <item>恋爱</item>
+        <item>历史</item>
+        <item>耽美</item>
+    </string-array>
+</resources>

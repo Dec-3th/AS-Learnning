@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context="com.jirdy.listview.MainActivity">
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_book_list"
+            android:checked="true"
+            android:text="@string/rb_title_booklist"
+            android:drawableTop="@drawable/rb_chat_selector"
+            style="@style/style_RadioButton"/>
+
+        <RadioButton
+            android:id="@+id/rb_book_graph"
+            android:text="@string/rb_title_graph"
+            android:drawableTop="@drawable/rb_contacts_selector"
+            style="@style/style_RadioButton"/>
+
+        <RadioButton
+            android:id="@+id/rb_discovery"
+            android:text="@string/rb_title_discovery"
+            android:drawableTop="@drawable/rb_discovery_selector"
+            style="@style/style_RadioButton"/>
+
+        <RadioButton
+            android:id="@+id/rb_me"
+            android:text="@string/rb_title_userinfo"
+            android:drawableTop="@drawable/rb_me_selector"
+            style="@style/style_RadioButton"/>
+    </RadioGroup>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/radioGroup" />
+
+
+    <!--有下拉刷新列表功能的Layout-->
+    <!--<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+        <!--android:id="@+id/id_swipe"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_below="@id/image_view"-->
+        <!--android:paddingBottom="@dimen/activity_vertical_margin"-->
+        <!--android:paddingLeft="@dimen/activity_horizontal_margin"-->
+        <!--android:paddingRight="@dimen/activity_horizontal_margin"-->
+        <!--android:paddingTop="@dimen/activity_vertical_margin">-->
+
+        <!--<ListView-->
+            <!--android:id="@+id/book_list"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent">-->
+
+        <!--</ListView>-->
+    <!--</android.support.v4.widget.SwipeRefreshLayout>-->
+
+</RelativeLayout>
