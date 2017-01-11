@@ -39,13 +39,13 @@ public class SaveToDBActivity extends ActionBarActivity {
                 addToDB(entryIdText.getText().toString(), titleText.getText().toString(), contentText.getText().toString());
                 break;
             case R.id.query:
-                queryFromDB(entryIdText.getText().toString(),true);
+                queryFromDB(entryIdText.getText().toString(), true);
                 break;
             case R.id.update:
                 updateToDB(entryIdText.getText().toString(), contentText.getText().toString());
                 break;
             case R.id.delete:
-                deleteFromDB(entryIdText.getText().toString(),true);
+                deleteFromDB(entryIdText.getText().toString(), true);
                 break;
         }
     }
@@ -58,7 +58,7 @@ public class SaveToDBActivity extends ActionBarActivity {
         values.put(FeedReaderContract.FeedEntry.COLUMN_NAME_TITLE, title);
         values.put(FeedReaderContract.FeedEntry.COLUMN_NAME_CONTENT, content);
 
-        /** insert()  方法的第一个参数是table名，第二个参数会使得系统自动对那些 ContentValues  没有提供数据的列填充数据
+        /** insert()  方法的第一个参数是table名，第二个参数会使得系统自动对那些 ContentValues没有提供数据的列填充数据
          为 null  ，如果第二个参数传递的是null，那么系统则不会对那些没有提供数据的列进行填充。*/
         long rowId = db.insert(FeedReaderContract.FeedEntry.TABLE_NAME,
                 null,
@@ -83,7 +83,7 @@ public class SaveToDBActivity extends ActionBarActivity {
         String sortOrder =
                 FeedReaderContract.FeedEntry.COLUMN_NAME_ENTRY_ID + " DESC";
 
-        Cursor cursor = null;
+        Cursor cursor;
 
         if (!queryAll) {
             // Define 'where' part of query.
@@ -133,6 +133,7 @@ public class SaveToDBActivity extends ActionBarActivity {
 
             Log.i(TAG, "查询到数据 id: " + id + ", entryId: " + entryId + ", title: " + title + ", content: " + content);
         }
+        cursor.close();
         Toast.makeText(this, "查询数据成功:" + "id: " + id + ", entryId: " + entryId + ", title: " + title + ", content: " + content, Toast.LENGTH_SHORT).show();
     }
 
