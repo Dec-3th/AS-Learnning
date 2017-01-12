@@ -58,7 +58,7 @@ public class MainActivity extends ActionBarActivity {
                 createCalendarEvent("标题：Android学习", "学校实验室");
                 break;
             case R.id.chose_share_app:
-                choseShareApp("Life sucks when your are ordinary");
+                chooseShareApp("Life sucks when your are ordinary");
                 break;
             case R.id.start_activity_for_result:
                 pickContact();
@@ -68,10 +68,11 @@ public class MainActivity extends ActionBarActivity {
                 startActivity(intent);
                 break;
             default:
-                Toast.makeText(this, "按钮id不存在！", Toast.LENGTH_SHORT);
+                Toast.makeText(this, "按钮id不存在！", Toast.LENGTH_SHORT).show();
         }
     }
 
+    //拨打指定电话
     public void call(String phoneNumber) {
         Uri number = Uri.parse("tel:" + phoneNumber);
         Intent intent = new Intent(Intent.ACTION_DIAL, number);//调拨打电话界面
@@ -79,6 +80,7 @@ public class MainActivity extends ActionBarActivity {
         safeStartActivity(intent);
     }
 
+    //打开地图
     public void openMap(String location) {
         Uri locat = Uri.parse("geo:" + location);
         Intent intent = new Intent(Intent.ACTION_VIEW, locat);//查看地图
@@ -86,12 +88,14 @@ public class MainActivity extends ActionBarActivity {
         safeStartActivity(intent);
     }
 
+    //打开网页
     public void openWebPage(String address) {
         Uri webpage = Uri.parse(address);
         Intent intent = new Intent(Intent.ACTION_VIEW, webpage);//查看地图
         safeStartActivity(intent);
     }
 
+    //发送带附件邮件
     public void sendEmail(String[] recipients, String title, String content, File file) {
         Intent emailIntent = new Intent(Intent.ACTION_SEND);
         //邮件发送类型：带附件的邮件
@@ -113,6 +117,7 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
+    //创建一个日历事件
     public void createCalendarEvent(String title, String eventLocation) {
         long time = System.currentTimeMillis();//获取当前系统时间
 
@@ -132,6 +137,10 @@ public class MainActivity extends ActionBarActivity {
         safeStartActivity(calendarIntent);
     }
 
+    /*
+    先检查是否存在可以使用的Activity，再打开Activity
+    验证有app可以handle这个intent,然后启动它
+     */
     private void safeStartActivity(Intent intent) {
         // Verify it resolves
         PackageManager packageManager = getPackageManager();
@@ -146,7 +155,8 @@ public class MainActivity extends ActionBarActivity {
         }
     }
 
-    public void choseShareApp(String content) {
+    //分享文本内容到其他app（通过intent-filter）
+    public void chooseShareApp(String content) {
         Intent intent = new Intent(Intent.ACTION_SEND);
         // Always use string resources for UI text.
         // This says something like "Share this photo with"
@@ -154,7 +164,8 @@ public class MainActivity extends ActionBarActivity {
         intent.setType(HTTP.PLAIN_TEXT_TYPE);
         intent.putExtra(Intent.EXTRA_TEXT, content);
 
-        // Create intent to show chooser
+        /* 显示分享App的选择界面
+        为了显示chooser来显示可用于打开的activity，使用createChooser来创建Intent*/
         Intent chooser = Intent.createChooser(intent, title);
 //        startActivity(chooser);
         // Verify the intent will resolve to at least one activity
@@ -162,7 +173,7 @@ public class MainActivity extends ActionBarActivity {
             Toast.makeText(this, "startActivity(chooser)", Toast.LENGTH_SHORT).show();
             startActivity(chooser);
         }
-        Toast.makeText(this, "choseShareApp", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "chooseShareApp", Toast.LENGTH_SHORT).show();
     }
 
 
@@ -171,38 +182,46 @@ public class MainActivity extends ActionBarActivity {
         Intent pickContact = new Intent(Intent.ACTION_PICK, Uri.parse("content://contacts"));
         pickContact.setType(ContactsContract.CommonDataKinds.Phone.CONTENT_TYPE);// Show user only contacts w/ phone numbers
 
-        //将从联系人穿
+        /*后一个参数为"request code"，用于标识你的请求。当你接收到result Intent时，可以从回调方法里面的参数去判断这个result是否是你想要的*/
         startActivityForResult(pickContact, PICK_CONTACT_REQUEST);
     }
 
     /**
-     * Dispatch incoming result to the correct fragment.
+     * 接收Activity返回的结果
      *
-     * @param requestCode
-     * @param resultCode
-     * @param data
+     * @param requestCode 你通过startActivityForResult()传递的request	code。
+     * @param resultCode  activity指定的result code。如果操作成功则是RESULT_OK，如果用户没有操作成功，而是直接点击回退或者其什么原因，那么则是RESULT_CANCELED
+     * @param data        intent,它包含了返回的result数据部分（可以自己指定要返回的数据在里面）。
      */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         Log.i(TAG, "onActivityResult " + resultCode);
-        if (requestCode == PICK_CONTACT_REQUEST) {
-            if (resultCode == RESULT_OK) {
-                Uri contactUri = data.getData();
+        if (requestCode == PICK_CONTACT_REQUEST) {/*从回调方法里面的requestCode参数去判断这个result是否是你想要的*/
+            if (resultCode == RESULT_OK) {//获取成功
+                Uri contactUri = data.getData();//被返回的Intent中使用Uri的形式来表示返回的联系人
                 String[] projection = {ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME,
                         ContactsContract.CommonDataKinds.Phone.NUMBER};
 
                 Cursor cursor = getContentResolver()
                         .query(contactUri, projection, null, null, null);
+                if (cursor == null) {
+                    Toast.makeText(this, "未获取到联系人!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 cursor.moveToFirst();
+
 
                 int nameIndex = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME);
                 int numberIndex = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER);
 
                 String name = cursor.getString(nameIndex);
                 String number = cursor.getString(numberIndex);
+                cursor.close();
+
                 Toast.makeText(this, "获取到联系人：" + name + "，电话：" + number, Toast.LENGTH_SHORT).show();
                 Log.i(TAG, "获取到联系人：" + name + "，电话：" + number);
+
             }
         }
     }
