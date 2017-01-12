@@ -8,33 +8,35 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/1-2ActionBar" />
+            <option value="$PROJECT_DIR$/1-5FragmentsApp" />
+            <option value="$PROJECT_DIR$/1-6DataSave" />
+            <option value="$PROJECT_DIR$/1-7IntentUse" />
+            <option value="$PROJECT_DIR$/2-1ShareSimpleData" />
             <option value="$PROJECT_DIR$/GreedySnake" />
             <option value="$PROJECT_DIR$/ListviewApp" />
             <option value="$PROJECT_DIR$/WandoujiaSDK_1.6.6" />
-            <option value="$PROJECT_DIR$/actionbarapp" />
             <option value="$PROJECT_DIR$/adtestapp" />
             <option value="$PROJECT_DIR$/androidbasics" />
             <option value="$PROJECT_DIR$/flashlight" />
-            <option value="$PROJECT_DIR$/fragmentsapp" />
             <option value="$PROJECT_DIR$/gpsfaker" />
-            <option value="$PROJECT_DIR$/intentuseapp" />
-            <option value="$PROJECT_DIR$/savedataapp" />
           </set>
         </option>
         <option name="myModules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/1-2ActionBar" />
+            <option value="$PROJECT_DIR$/1-5FragmentsApp" />
+            <option value="$PROJECT_DIR$/1-6DataSave" />
+            <option value="$PROJECT_DIR$/1-7IntentUse" />
+            <option value="$PROJECT_DIR$/2-1ShareSimpleData" />
             <option value="$PROJECT_DIR$/GreedySnake" />
             <option value="$PROJECT_DIR$/ListviewApp" />
             <option value="$PROJECT_DIR$/WandoujiaSDK_1.6.6" />
-            <option value="$PROJECT_DIR$/actionbarapp" />
             <option value="$PROJECT_DIR$/adtestapp" />
             <option value="$PROJECT_DIR$/androidbasics" />
             <option value="$PROJECT_DIR$/flashlight" />
-            <option value="$PROJECT_DIR$/fragmentsapp" />
             <option value="$PROJECT_DIR$/gpsfaker" />
-            <option value="$PROJECT_DIR$/intentuseapp" />
-            <option value="$PROJECT_DIR$/savedataapp" />
           </set>
         </option>
       </GradleProjectSettings>
