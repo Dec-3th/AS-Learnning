@@ -2,20 +2,52 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jreal.sharesimpledata">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="@string/activity_send"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SendActivity">
+
+        <!-- 分享数据的Activity -->
+        <activity android:name=".ShareActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ReceiveActivity"></activity>
+
+        <!-- 接收数据的Activity
+        注意：
+        一定要配置 category android:name="android.intent.category.DEFAULT"
+        此Activity才会显示在选择列表里面
+        下面对该Acitivity分别定义了：接受单张图片，文本 与 多张图片 的Intent Filter-->
+        <activity android:name=".ReceiveActivity"
+            android:icon="@drawable/ic_action_receive"
+            android:label="@string/activity_receive">
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/*" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEND_MULTIPLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/*" />
+            </intent-filter>
+
+        </activity>
     </application>
 
 </manifest>

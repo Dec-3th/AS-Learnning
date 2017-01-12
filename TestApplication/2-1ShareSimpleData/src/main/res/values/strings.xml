@@ -1,3 +1,14 @@
 <resources>
-    <string name="app_name">2_1ShareSimpleData</string>
+    <string name="app_name">2.1 ShareSimpleData</string>
+
+    <string name="activity_send">分享发送数据</string>
+    <string name="activity_receive">接收数据</string>
+    <string name="title">使用Intent分享</string>
+    <string name="send_to_title">分享到...</string>
+    <string name="share_text">分享文本内容</string>
+    <string name="share_binary">分享二进制内容</string>
+    <string name="share_multiple">发送多块内容</string>
+
+
+    <string name="receive_msg">接收来自Intent分享的数据</string>
 </resources>

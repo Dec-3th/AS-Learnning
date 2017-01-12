@@ -211,7 +211,6 @@ public class MainActivity extends ActionBarActivity {
                 }
                 cursor.moveToFirst();
 
-
                 int nameIndex = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME);
                 int numberIndex = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER);
 
