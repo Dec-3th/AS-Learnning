@@ -38,12 +38,18 @@ public class ReceiveActivity extends AppCompatActivity {
 //        Intent intent = this.getIntent();
 //        String action = intent.getAction();
 //        String type = intent.getType();
-        holdReceivedData(this.getIntent());
+        handleReceivedData(this.getIntent());
 
     }
 
 
-    private void holdReceivedData(Intent intent) {
+    /**
+     * 处理接收到的数据
+     * 请注意：
+     * 由于无法知道其他程序发送过来的数据内容是文本还是其他类型的数据，若数据量巨大，则需要大量处理时间，因此我们应避免在UI线程里面去处理那些获取到的数据。
+     * @param intent
+     */
+    private void handleReceivedData(Intent intent) {
         String action = intent.getAction();
         String type = intent.getType();
 
@@ -92,7 +98,7 @@ public class ReceiveActivity extends AppCompatActivity {
         if (imageUri != null)
             imageView1.setImageURI(imageUri);
         else
-            Toast.makeText(this, "分享数据不存在：" + imageUri.toString(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "分享数据不存在：" + imageUri, Toast.LENGTH_SHORT).show();
 
 
     }
@@ -103,10 +109,11 @@ public class ReceiveActivity extends AppCompatActivity {
         size = imageUris.size();
         Log.i(TAG, "imageUris: " + imageUris);
         if (imageUris.size() > 0) {
-//            linearLayout.
+//            ImageView imageView = new ImageView()
+//            linearLayout.addView();
             imageView1.setImageURI(imageUris.get(0));
             imageView2.setImageURI(imageUris.get(1));
-            imageView3.setImageURI(imageUris.get(2));
+//            imageView3.setImageURI(imageUris.get(2));
         } else
             Toast.makeText(this, "分享数据集为空 size：" + imageUris.size(), Toast.LENGTH_SHORT).show();
 

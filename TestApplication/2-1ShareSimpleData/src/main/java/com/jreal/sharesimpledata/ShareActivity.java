@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.File;
@@ -17,11 +18,18 @@ import java.util.ArrayList;
 public class ShareActivity extends AppCompatActivity {
 
     public final static String TAG = "JR";
+    public ImageView imageView1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_share);
+
+        imageView1 = (ImageView) findViewById(R.id.share_image1);
+        File file = new File(Environment.getExternalStorageDirectory().getPath() + File.separator + "dot11.jpg");// 附件
+        Log.i(TAG, "file: " + file.getAbsolutePath());
+
+        imageView1.setImageURI(Uri.fromFile(file));
     }
 
     public void onClick(View view) {
@@ -44,7 +52,7 @@ public class ShareActivity extends AppCompatActivity {
                 File image2 = new File(Environment.getExternalStorageDirectory().getPath() + File.separator + "a.png");
                 File image3 = new File(Environment.getExternalStorageDirectory().getPath() + File.separator + "b.png");
 
-                imageUris.add(Uri.parse("http://www.baidu.com/img/bdlogo.png"));//分享网络图片
+//                imageUris.add(Uri.parse("http://www.baidu.com/img/bdlogo.png"));//分享网络图片
                 imageUris.add(Uri.fromFile(image2)); // Add your image URIs here
                 imageUris.add(Uri.fromFile(image3)); // Add your image URIs here
 
@@ -76,7 +84,7 @@ public class ShareActivity extends AppCompatActivity {
         intent.setAction(Intent.ACTION_SEND);
         intent.putExtra(Intent.EXTRA_TEXT, content);
         intent.setType("text/plain");
-        startActivity(intent.createChooser(intent, getResources().getText(R.string.send_to_title)));
+        startActivity(Intent.createChooser(intent, getResources().getText(R.string.send_to_title)));
     }
 
     /**
@@ -89,7 +97,7 @@ public class ShareActivity extends AppCompatActivity {
         intent.setAction(Intent.ACTION_SEND);
         intent.putExtra(Intent.EXTRA_STREAM, urlToImage);
         intent.setType("image/jpeg");
-        startActivity(intent.createChooser(intent, getResources().getText(R.string.send_to_title)));
+        startActivity(Intent.createChooser(intent, getResources().getText(R.string.send_to_title)));
     }
 
     /**
@@ -102,7 +110,7 @@ public class ShareActivity extends AppCompatActivity {
         intent.setAction(Intent.ACTION_SEND_MULTIPLE);
         intent.putParcelableArrayListExtra(Intent.EXTRA_STREAM, imageUris);
         intent.setType("image/*");
-        startActivity(intent.createChooser(intent, getResources().getText(R.string.send_to_title)));
+        startActivity(Intent.createChooser(intent, getResources().getText(R.string.send_to_title)));
     }
 
 //    /**

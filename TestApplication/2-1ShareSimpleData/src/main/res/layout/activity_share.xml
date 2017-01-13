@@ -14,14 +14,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:text="@string/title" />
 
     <Button
         android:id="@+id/share_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15sp"
         android:onClick="onClick"
         android:text="@string/share_text" />
 
@@ -29,7 +29,7 @@
         android:id="@+id/share_binary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15sp"
         android:onClick="onClick"
         android:text="@string/share_binary" />
 
@@ -37,8 +37,14 @@
         android:id="@+id/share_multiple"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15sp"
         android:onClick="onClick"
         android:text="@string/share_multiple" />
+
+    <ImageView
+        android:id="@+id/share_image1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp" />
 
 </LinearLayout>
