@@ -48,12 +48,13 @@ public class ShareActivity extends AppCompatActivity {
                 break;
             case R.id.share_multiple:
                 ArrayList<Uri> imageUris = new ArrayList<Uri>();
-//                File image1 = new File(Environment.getExternalStorageDirectory().getPath() + File.separator + "dot11.jpg");
+                File image1 = new File(Environment.getExternalStorageDirectory().getPath() + File.separator + "dot11.jpg");
                 File image2 = new File(Environment.getExternalStorageDirectory().getPath() + File.separator + "a.png");
                 File image3 = new File(Environment.getExternalStorageDirectory().getPath() + File.separator + "b.png");
 
-//                imageUris.add(Uri.parse("http://www.baidu.com/img/bdlogo.png"));//分享网络图片
+                imageUris.add(Uri.fromFile(image1));//分享网络图片
                 imageUris.add(Uri.fromFile(image2)); // Add your image URIs here
+                imageUris.add(Uri.fromFile(image1));//分享网络图片
                 imageUris.add(Uri.fromFile(image3)); // Add your image URIs here
 
                 shareMultiple(imageUris);

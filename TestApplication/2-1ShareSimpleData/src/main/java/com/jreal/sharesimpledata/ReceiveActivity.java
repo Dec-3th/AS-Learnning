@@ -5,12 +5,12 @@ import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -19,9 +19,9 @@ public class ReceiveActivity extends AppCompatActivity {
     public final static String TAG = "JR";
     TextView textView;
     ImageView imageView1;
-    ImageView imageView2;
-    ImageView imageView3;
-    LinearLayout linearLayout;
+    //    ImageView imageView2;
+//    ImageView imageView3;
+    LinearLayout containerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +30,9 @@ public class ReceiveActivity extends AppCompatActivity {
 
         textView = (TextView) findViewById(R.id.receive_text);
         imageView1 = (ImageView) findViewById(R.id.receive_image1);
-        imageView2 = (ImageView) findViewById(R.id.receive_image2);
-        imageView3 = (ImageView) findViewById(R.id.receive_image3);
-        linearLayout = (LinearLayout) findViewById(R.id.linear_lists);
+//        imageView2 = (ImageView) findViewById(R.id.receive_image2);
+//        imageView3 = (ImageView) findViewById(R.id.receive_image3);
+        containerLayout = (LinearLayout) findViewById(R.id.image_container);
 
         // Get intent, action and MIME type
 //        Intent intent = this.getIntent();
@@ -47,6 +47,7 @@ public class ReceiveActivity extends AppCompatActivity {
      * 处理接收到的数据
      * 请注意：
      * 由于无法知道其他程序发送过来的数据内容是文本还是其他类型的数据，若数据量巨大，则需要大量处理时间，因此我们应避免在UI线程里面去处理那些获取到的数据。
+     *
      * @param intent
      */
     private void handleReceivedData(Intent intent) {
@@ -95,11 +96,11 @@ public class ReceiveActivity extends AppCompatActivity {
 
         Uri imageUri = intent.getParcelableExtra(Intent.EXTRA_STREAM);//被返回的Intent中使用Uri的形式来表示返回的联系人
         Log.i(TAG, "imageUri: " + imageUri);
-        if (imageUri != null)
+        if (imageUri != null) {
             imageView1.setImageURI(imageUri);
-        else
-            Toast.makeText(this, "分享数据不存在：" + imageUri, Toast.LENGTH_SHORT).show();
-
+            imageView1.setAdjustViewBounds(true);
+        } else
+            Toast.makeText(this, "分享的数据不存在：" + imageUri, Toast.LENGTH_SHORT).show();
 
     }
 
@@ -109,13 +110,21 @@ public class ReceiveActivity extends AppCompatActivity {
         size = imageUris.size();
         Log.i(TAG, "imageUris: " + imageUris);
         if (imageUris.size() > 0) {
-//            ImageView imageView = new ImageView()
-//            linearLayout.addView();
-            imageView1.setImageURI(imageUris.get(0));
-            imageView2.setImageURI(imageUris.get(1));
-//            imageView3.setImageURI(imageUris.get(2));
+
+            while (size-- > 0) {
+                ImageView imageView = new ImageView(this);
+                imageView.setLayoutParams(new ViewGroup.LayoutParams(
+                        ViewGroup.LayoutParams.MATCH_PARENT,
+                        ViewGroup.LayoutParams.WRAP_CONTENT
+                ));
+                imageView.setImageURI(imageUris.get(size));
+                imageView.setAdjustViewBounds(true);//设置ImageView布局自适应父View（即在保持长宽比条件下，填满父布局）
+
+                containerLayout.addView(imageView);
+            }
+
         } else
-            Toast.makeText(this, "分享数据集为空 size：" + imageUris.size(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "分享的数据集为空 size：" + imageUris.size(), Toast.LENGTH_SHORT).show();
 
 
     }
