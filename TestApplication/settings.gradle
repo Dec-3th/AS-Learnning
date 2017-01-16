@@ -1,1 +1,1 @@
-include ':1-2ActionBar', ':1-5FragmentsApp', ':1-6DataSave', ':1-7IntentUse', ':ListviewApp', ':flashlight', ':WandoujiaSDK_1.6.6', ':adtestapp', ':GreedySnake', ':PaintJumper', ':gpsfaker', ':2-1ShareSimpleData'
+include ':1-2ActionBar', ':1-5FragmentsApp', ':1-6DataSave', ':1-7IntentUse', ':ListviewApp', ':flashlight', ':WandoujiaSDK_1.6.6', ':adtestapp', ':GreedySnake', ':PaintJumper', ':gpsfaker', ':2-1ShareSimpleData', ':2-2File-Sharing'

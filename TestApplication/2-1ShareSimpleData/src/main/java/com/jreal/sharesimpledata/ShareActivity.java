@@ -121,7 +121,7 @@ public class ShareActivity extends AppCompatActivity {
                         "---因为你所害怕的事情，往往是最值得的。");
                 break;
             case R.id.share_binary:
-                //icon.png必须保存在手机内存的根目录下才能找到，否则找不到。
+                //icon.png必须保存在手机 内存的根目录下才能找到，否则找不到。
                 File file = new File(Environment.getExternalStorageDirectory().getPath() + File.separator + "dot11.jpg");// 附件
                 Log.i(TAG, "file: " + file.getAbsolutePath());
 
