@@ -41,6 +41,16 @@
         android:onClick="onClick"
         android:text="@string/share_multiple" />
 
+    <Button
+        android:id="@+id/share_with_actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15sp"
+        android:onClick="onClick"
+        android:text="@string/share_with_actionbar" />
+
+
+
     <ImageView
         android:id="@+id/share_image1"
         android:layout_width="match_parent"

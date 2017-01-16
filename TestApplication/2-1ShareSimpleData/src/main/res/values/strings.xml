@@ -8,7 +8,7 @@
     <string name="share_text">分享文本内容</string>
     <string name="share_binary">分享二进制内容</string>
     <string name="share_multiple">发送多块内容</string>
-
+    <string name="share_with_actionbar">使用ActionBar来分享</string>
 
     <string name="receive_msg">接收来自Intent分享的数据</string>
 </resources>
