@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jirdy.filesharing">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".RequestShareFileActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".FileSelectActivity"
+            android:icon="@drawable/ic_file_select"
+            android:label="File Selector">
+            <!--
+            为建立一个选择文件的Activity，首先需要在Manifest清单文件中定义Activity，在其Intent过滤器中，
+            1. 匹配ACTION_PICK Action及CATEGORY_DEFAULT 和 CATEGORY_OPENABLE这两种Category。
+            -->
+            <intent-filter>
+                <action android:name="android.intent.action.PICK" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.OPENABLE" />
+
+                <!-- 2. 为应用程序设置MIME类型过滤器，来表明我们的应用程序可以向其他应用程序提供哪种类型的文件。-->
+                <data android:mimeType="text/plain" />
+                <data android:mimeType="image/*" />
+            </intent-filter>
+
+        </activity>
+
+        <!-- 1.为了给应用程序定义一个FileProvider，需要在Manifest清单文件中定义一个entry，该entry指明了需要使用的创建Content URI的Authority。 -->
+        <!--
+        android:authorities 字段指定了希望使用的Authority，该Authority针对于FileProvider所生成的content URI。
+            对于自己的应用，要在我们的应用程序包名（android:package的值）之后继续追加“fileprovider”来指定Authority。
+        <provider>下的<meta-data> 指向了一个XML文件，该文件指定了我们希望共享的 目录路径。
+            “android:resource”属性字段是这个文件的路径和名字（无“.xml”后缀）.
+        -->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.jirdy.filesharing.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+
+            <!--
+             android:resource="@xml/file_paths" 表示 要共享文件的配置文件(xml)位置：res/xml/file_paths.xml
+             file_paths.xml 指定了我们希望共享文件的目录路径（包含路径名称文件类型）
+            -->
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+    </application>
+
+</manifest>

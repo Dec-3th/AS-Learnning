@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 一旦在Manifest清单文件中为自己的应用添加了FileProvider，就需要指定我们希望共享文件的目录路径。
+ 为指定该路径，首先要在“res/xml/”下创建文件“file_paths.xml”。在这个文件中，为每一个想要共享目录添加一个XML标签。
+
+ Note: XML文件是我们定义共享目录的唯一方式，不可以用代码的形式添加目录。
+-->
+<resources>
+    <paths>
+
+        <!--
+        标签名一定不能写错
+        <files-path>标签共享的是在我们应用的内部存储中“files/”目录下的目录。
+        “path”属性字段指出了该子目录为“files/”目录下的子目录“images/”。
+        “name”属性字段告知FileProvider在“files/images/”子目录中的文件的Content URI添加路径分段（path segment）标记：“my_images”。
+        理解：即在使用时将path对应的路径映射到my_images，外部显示my_images为其路径
+        -->
+        <files-path
+            name="my_images"
+            path="images/" />
+        <!--<external-path path="images/" name="my_images"/>-->
+    </paths>
+</resources><!--
+共享 其他位置的文件（非files文件夹下文件） 该使用的标签
+<paths>标签可以有多个子标签，每一个子标签用来指定不同的共享目录。
+除了<files-path>标签，还可以使用<external-path>来共享位于外部存储的目录；
+另外，<cache-path>标签用来共享在内部缓存目录下的子目录。
+-->
