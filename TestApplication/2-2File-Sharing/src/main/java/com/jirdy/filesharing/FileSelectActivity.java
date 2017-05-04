@@ -101,10 +101,10 @@ public class FileSelectActivity extends ActionBarActivity {
                     /*将选择的文件添加到分享列表，双击取消分享*/
                     if (selectedFilesUri.contains(fileUri)) {
                         selectedFilesUri.remove(fileUri);
-                        view.setBackgroundColor(Color.WHITE);
+                        view.setBackgroundColor(Color.WHITE); //双击取消选择，恢复背景为白色
                     } else {
                         selectedFilesUri.add(fileUri);
-                        view.setBackgroundColor(Color.LTGRAY);
+                        view.setBackgroundColor(Color.LTGRAY); //选中的背景为灰色
                     }
                 }
 
