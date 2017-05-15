@@ -23,24 +23,7 @@
             <option value="$PROJECT_DIR$/gpsfaker" />
           </set>
         </option>
-        <option name="myModules">
-          <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/1-2ActionBar" />
-            <option value="$PROJECT_DIR$/1-5FragmentsApp" />
-            <option value="$PROJECT_DIR$/1-6DataSave" />
-            <option value="$PROJECT_DIR$/1-7IntentUse" />
-            <option value="$PROJECT_DIR$/2-1ShareSimpleData" />
-            <option value="$PROJECT_DIR$/2-2File-Sharing" />
-            <option value="$PROJECT_DIR$/GreedySnake" />
-            <option value="$PROJECT_DIR$/ListviewApp" />
-            <option value="$PROJECT_DIR$/PaintJumper" />
-            <option value="$PROJECT_DIR$/WandoujiaSDK_1.6.6" />
-            <option value="$PROJECT_DIR$/adtestapp" />
-            <option value="$PROJECT_DIR$/flashlight" />
-            <option value="$PROJECT_DIR$/gpsfaker" />
-          </set>
-        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>

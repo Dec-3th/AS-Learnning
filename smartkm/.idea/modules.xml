@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/slidingmenu/library/library.iml" filepath="$PROJECT_DIR$/slidingmenu/library/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/slidingmenu/slidingmenu.iml" filepath="$PROJECT_DIR$/slidingmenu/slidingmenu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smartKM/smartKM.iml" filepath="$PROJECT_DIR$/smartKM/smartKM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smartkm.iml" filepath="$PROJECT_DIR$/smartkm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/viewpagerindicator-library/viewpagerindicator-library.iml" filepath="$PROJECT_DIR$/viewpagerindicator-library/viewpagerindicator-library.iml" />
+    </modules>
+  </component>
+</project>

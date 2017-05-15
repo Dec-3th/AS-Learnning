@@ -1,0 +1,2 @@
+include ':smartKM', 'slidingmenu:library'
+include ':viewpagerindicator-library'

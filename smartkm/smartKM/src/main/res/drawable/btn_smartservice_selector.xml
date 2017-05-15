@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 选中以后才变色，而不是按下按钮变色 -->
+    <item android:drawable="@mipmap/smartservice_press" android:state_checked="true"/>
+
+    <item android:drawable="@mipmap/smartservice"/>
+
+</selector>

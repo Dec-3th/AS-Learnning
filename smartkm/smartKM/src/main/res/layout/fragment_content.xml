@@ -1,0 +1,87 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_fragment_framelayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.jirdy.smartkm.base.impl.ContentFragment">
+
+    <!-- TODO: 这里使用自定义的，不可滑动的ViewPager -->
+
+    <com.jirdy.smartkm.view.NoScrollViewPager
+        android:id="@+id/content_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </com.jirdy.smartkm.view.NoScrollViewPager>
+
+    <!-- TODO: 提出样式 的关键知识
+    android:button="@null" 去除RadioButton的Button 那个小圆圈复选框按钮
+    android:gravity="center" 内部居中 内部的文字图标居中
+    android:layout_gravity="center" 外部居中 在父布局中居中
+
+    RadioButton相同配置的全部写为一个样式放到styles.xml中, 如下
+    <RadioButton
+            android:id="@+id/xxx"
+            android:drawableTop="@drawable/xxx"
+            android:text="XXX"
+
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:gravity="center"
+            android:padding="3dp"
+            android:textColor="@color/start_text_color_selector"
+            />
+    写到styles.xml中:  使用时设置RadioButton style="@style/BottomTabStyle"即可
+    <style name="BottomTabStyle">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">3dp</item>
+        <item name="android:textColor">@color/bottom_tab_color_selector</item>
+    </style>
+    -->
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:background="@android:color/darker_gray">
+
+        <RadioButton
+            android:id="@+id/rb_home"
+            style="@style/BottomTabStyle"
+            android:drawableTop="@drawable/btn_home_selector"
+            android:checked="true"
+            android:text="首页"/>
+
+        <RadioButton
+            android:id="@+id/rb_newscenter"
+            style="@style/BottomTabStyle"
+            android:drawableTop="@drawable/btn_newscenter_selector"
+            android:text="新闻中心"/>
+
+        <RadioButton
+            android:id="@+id/rb_smartservice"
+            style="@style/BottomTabStyle"
+            android:drawableTop="@drawable/btn_smartservice_selector"
+            android:text="智慧服务"/>
+
+        <RadioButton
+            android:id="@+id/rb_govaffairs"
+            style="@style/BottomTabStyle"
+            android:drawableTop="@drawable/btn_govaffairs_selector"
+            android:text="政务"/>
+
+        <RadioButton
+            android:id="@+id/rb_setting"
+            style="@style/BottomTabStyle"
+            android:drawableTop="@drawable/btn_setting_selector"
+            android:text="设置"/>
+
+    </RadioGroup>
+</FrameLayout>
