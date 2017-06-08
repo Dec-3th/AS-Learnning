@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/iv_refresh_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@mipmap/common_listview_headview_red_arrow" />
+
+        <!-- android:indeterminateDrawable="@drawable/custom_progress" 自定义进度条旋转效果 -->
+        <ProgressBar
+            android:id="@+id/pb_refresh_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="invisible"
+            android:indeterminateDrawable="@drawable/custom_progress"/>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_refresh_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="下拉刷新"
+            android:textColor="@color/red"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/tv_refresh_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2017-05-16 17:07"
+            android:textColor="@color/black_overlay"
+            android:layout_marginTop="5dp"
+            android:textSize="14dp" />
+
+    </LinearLayout>
+</LinearLayout>

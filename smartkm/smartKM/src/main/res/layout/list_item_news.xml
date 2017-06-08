@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_news_img"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="5dp"
+        android:background="@color/black_overlay"
+        android:padding="1dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/image_demo" />
+
+    <!--android:maxLines="2"   TextView最多显示2行 -->
+    <!--android:ellipsize="end"  被省略text末尾加上省略号 -->
+    <TextView
+        android:id="@+id/tv_news_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@+id/iv_news_img"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="看来发掘搜欧文返利网假期哦评价洒类似的物品佛of骄傲楼上的房间口岸设计费"
+        android:textColor="@android:color/black"
+        android:textSize="16dp" />
+
+    <!--android:layout_alignBottom="@+id/iv_news_img"-->
+    <TextView
+        android:id="@+id/tv_news_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="2017-05-16 10:29"
+        android:textColor="@color/black_overlay"
+        android:textSize="14dp" />
+
+
+</RelativeLayout>

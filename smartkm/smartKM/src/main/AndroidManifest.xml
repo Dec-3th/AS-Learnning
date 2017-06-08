@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jirdy.smartkm">
-
     //
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -23,10 +22,14 @@
             </intent-filter>
         </activity>
         <!-- Theme.PageIndicatorDefaults是viewpagerindicator中定义的主题，有需要直接到library中去修改或这者新建 -->
-        <activity android:name=".MainActivity"
-            android:theme="@style/Theme.JR.PageIndicatorNews"/>
-
-        <activity android:name=".GuideActivity"></activity>
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/Theme.JR.PageIndicatorNews" />
+        <activity android:name=".GuideActivity" />
+        <activity
+            android:name=".NewsDetailActivity"
+            android:label="@string/title_activity_news_detail"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

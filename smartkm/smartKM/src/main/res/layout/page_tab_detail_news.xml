@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/vp_tap_detail_news"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    </android.support.v4.view.ViewPager>
-
-    <ListView
+    <!-- android:cacheColorHint="@android:color/white" 列表内容（子布局）加载出来前的填充颜色-->
+    <com.jirdy.smartkm.view.RefreshListView
         android:id="@+id/lv_tap_detail_news"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:cacheColorHint="@android:color/white">
 
-    </ListView>
+    </com.jirdy.smartkm.view.RefreshListView>
 
 </LinearLayout>

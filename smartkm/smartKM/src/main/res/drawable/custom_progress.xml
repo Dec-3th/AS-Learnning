@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+通过为形状设置一个旋转动画rotate，来通多代码让进度环旋转起来，而不用使用系统默认旋转效果
+参数：
+从0度到360度
+android:fromDegrees="0"
+android:toDegrees="360"
+旋转点的位置是正中间
+android:pivotX="50%"
+android:pivotY="50%"
+-->
+<rotate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromDegrees="0"
+    android:pivotX="50%"
+    android:pivotY="50%"
+    android:toDegrees="360">
+
+    <!--
+    android:shape="ring" 环状
+    android:innerRadius="15dp" 环的内环部半径
+    android:thickness="3dp" 环的粗细/厚度
+    android:useLevel="false" 禁用系统默认的绘制方法，
+    这样环就不会有加载进度的旋转效果，我们在<shape>外面嵌套一个旋转动画<rotate>，通过代码让环转起来
+    -->
+<shape android:innerRadius="15dp"
+    android:shape="ring"
+    android:thickness="3dp"
+    android:useLevel="false"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <!--
+         渐变效果：
+            android:startColor="#f00" 起始颜色红
+            android:centerColor="#5f00" 中间颜色透明
+            android:endColor="#fff" 终点颜色白
+            android:type="sweep" 设置渐变模式为线性渐变(sweep)，还有辐射渐变(radial)，线性渐变(linear)
+         -->
+        <gradient
+            android:centerColor="#3f00"
+            android:endColor="#fff"
+            android:startColor="#f00"
+            android:type="sweep"
+            />
+    </shape>
+
+</rotate>

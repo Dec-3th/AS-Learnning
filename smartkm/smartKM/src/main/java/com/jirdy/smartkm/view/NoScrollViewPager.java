@@ -20,17 +20,17 @@ public class NoScrollViewPager extends ViewPager {
         super(context, attrs);
     }
 
-    //决定事件是否中断
+    //onInterceptTouchEvent决定事件是否中断
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        //始终返回false，不拦截事件，让嵌套的子ViewPage有机会响应触摸事件
+        //始终返回false，强制设置该NoScrollViewPager不拦截任何触摸事件，让嵌套的子ViewPage来响应触摸事件
         return false;
     }
 
     //触摸事件
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
-//        return super.onTouchEvent(ev);
+//        return super.onTouchEv ent(ev);
 
         //子类什么都不做，从而屏蔽父ViewPager的触摸（滑动）屏幕事件
         //重写父类ViewPager的onTouchEvent为什么都不做，直接返回true

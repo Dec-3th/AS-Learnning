@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 
 /**
  * Fragment基类
- * 1.初始化布局 initView
+ * 1.初始化布局 initHeaderView
  * 2.初始化数据 initData
  * A simple {@link Fragment} subclass.
  */

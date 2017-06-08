@@ -1,8 +1,9 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/content_fragment_framelayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.jirdy.smartkm.base.impl.ContentFragment">
 
     <!-- TODO: 这里使用自定义的，不可滑动的ViewPager -->
@@ -10,11 +11,13 @@
     <com.jirdy.smartkm.view.NoScrollViewPager
         android:id="@+id/content_view_pager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
 
     </com.jirdy.smartkm.view.NoScrollViewPager>
 
-    <!-- TODO: 提出样式 的关键知识
+    <!-- TODO: 提出样式的关键知识
     android:button="@null" 去除RadioButton的Button 那个小圆圈复选框按钮
     android:gravity="center" 内部居中 内部的文字图标居中
     android:layout_gravity="center" 外部居中 在父布局中居中
@@ -50,7 +53,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:orientation="horizontal"
-        android:background="@android:color/darker_gray">
+        android:background="@android:color/darker_gray"
+        >
 
         <RadioButton
             android:id="@+id/rb_home"
@@ -84,4 +88,4 @@
             android:text="设置"/>
 
     </RadioGroup>
-</FrameLayout>
+</LinearLayout>

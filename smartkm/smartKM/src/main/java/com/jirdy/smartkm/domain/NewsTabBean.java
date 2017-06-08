@@ -27,7 +27,7 @@ public class NewsTabBean {
          */
 
         public String countcommenturl;
-        public String more;
+        public String more; //表示下一页链接数据
         public String title;
         public List<NewsBean> news;
         public List<TopicBean> topic;
@@ -49,7 +49,7 @@ public class NewsTabBean {
             public boolean comment;
             public String commentlist;
             public String commenturl;
-            public int id;
+            public String id;
             public String listimage;
             public String pubdate;
             public String title;
